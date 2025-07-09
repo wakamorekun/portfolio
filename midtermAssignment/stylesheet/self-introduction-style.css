@@ -1,0 +1,14 @@
+/*記述済みの部分は変更しないでください！*/
+
+@charset "utf-8";
+
+.mark-list {
+    list-style: "★";
+}
+li{
+    font-size:large;
+}
+body{
+
+    background-color: rgba(0, 12, 147, 0.16);
+}

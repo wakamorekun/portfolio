@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+/* アニメーションの定義 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* アニメーションの適用 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn 1s ease-out;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: slideIn 0.8s ease-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    display: block;
+    padding: 1rem 2rem;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 1.2rem;
+    animation: slideIn 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+/* 各ナビゲーションアイテムに遅延を設定 */
+.nav-item:nth-child(1) { animation-delay: 0.2s; }
+.nav-item:nth-child(2) { animation-delay: 0.3s; }
+.nav-item:nth-child(3) { animation-delay: 0.4s; }
+.nav-item:nth-child(4) { animation-delay: 0.5s; }
+.nav-item:nth-child(5) { animation-delay: 0.6s; }
+
+.nav-item:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav-item {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+a {
+    width: 30%;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(163, 225, 201);
+    display: block;
+    text-align: center;
+    text-decoration: double;
+    font-size: 1.5rem;
+    border: solid 2px rgba(170, 0, 255, 0.541);
+}
+
+.sample {
+    background-color: bisque;
+}
+
+body {
+    background-image: url(../IT_history/img-it/haikei.jpeg);
+}
+
+h1 {
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 25px;
+    text-decoration: double;
+    border: solid 3px rgb(0, 234, 255);
+    font-size: 2.5rem;
+}
+
+h2 {
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 25px;
+    text-decoration: double;
+    border: solid 3px rgb(0, 234, 255);
+    font-size: 1.9rem;
+}
+

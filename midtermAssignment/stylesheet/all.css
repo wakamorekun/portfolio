@@ -1,0 +1,191 @@
+@charset "UFT-8";
+
+
+
+header,
+footer {
+    background-color: rgb(161, 231, 231);
+    padding: 0.5rem;
+}
+
+header {
+    width: 100%;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+}
+
+header ul li {
+    width: 20%;
+    text-align: center;
+}
+
+header ul li a {
+    display: block;
+    padding: 0.5rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body {
+    min-width: 700px;
+}
+
+header ul li+li {
+    border-left: 3.5px solid rgb(9, 242, 223);
+}
+
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    font-size:medium;
+}
+
+.breadcrumbs li::after {
+    content: ">";
+    padding: 0 0.5rem;
+    color: white;
+}
+
+.breadcrumbs li:last-child::after {
+    content: "";
+}
+
+.breadcrumbs li a:link {
+    color: rgb(255, 255, 255);
+}
+
+.breadcrumbs li a:visited {
+    color: rgb(255, 255, 255);
+}
+
+.breadcrumbs li a:hover {
+    text-decoration: none;
+}
+
+.background {
+    background-image: url(../IT_history/img-it/haikei.jpeg);
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode:color-burn;
+}
+
+header img {
+    width: 30rem;
+    display: inline-block;
+}
+
+.background img {
+    opacity: 0.1;
+}
+
+.head{
+    font-size:larger;
+}
+
+/* アニメーションの定義 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* アニメーションの適用 */
+.background {
+    animation: fadeIn 1s ease-out;
+}
+
+.head {
+    animation: slideIn 0.8s ease-out;
+}
+
+.breadcrumbs {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+/* 既存のスタイル */
+.background {
+    background-color: #f5f5f5;
+    padding: 1rem;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.head li {
+    margin: 0 1rem;
+}
+
+.head a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.head a:hover {
+    color: #666;
+}
+
+.breadcrumbs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.breadcrumbs li {
+    margin-right: 0.5rem;
+}
+
+.breadcrumbs li:after {
+    content: ">";
+    margin-left: 0.5rem;
+}
+
+.breadcrumbs li:last-child:after {
+    content: "";
+}
+
+.breadcrumbs a {
+    color: #666;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
