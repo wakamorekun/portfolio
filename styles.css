@@ -245,7 +245,6 @@ main {
     overflow: hidden;
 }
 
-
 .progress-bar {
     background: var(--gradient);
     transition: width 2s ease-in-out; 
