@@ -66,6 +66,29 @@ body {
 main {
     margin-top: 60px;
 }
+/* styles.css に追記 */
+
+/* Google Fontのクラス定義 */
+.stalinist-one-regular {
+  font-family: "Stalinist One", sans-serif;
+}
+
+/* ヒーローセクションの見出しにフォントを適用 */
+.hero-section h1 {
+    font-family: 'Dela Gothic One', sans-serif; /* 例としてDela Gothic Oneを適用 */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 基本のフォント設定（必要に応じて変更） */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: var(--dark-color);
+    line-height: 1.6;
+    background-color: var(--light-color);
+}
 
 /* セクション共通 */
 .section-padding {
@@ -258,6 +281,7 @@ main {
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
     transition: var(--transition);
+    height: 100%;
 }
 
 .skill-description:hover {
