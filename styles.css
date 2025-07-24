@@ -513,3 +513,8 @@ footer {
     pointer-events: none;
     display: block;
 }
+
+.work-image img[alt="プロジェクト3"] {
+    object-fit: contain;
+    background: #f8f9fa;
+}
