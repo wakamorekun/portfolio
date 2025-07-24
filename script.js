@@ -200,6 +200,85 @@ const initFloatingAnimation = () => {
     const profileImage = document.querySelector('.profile-image img');
 };
 
+// 背景アニメーション（スクロール連動のシンプルな丸）
+function initBgAnimation() {
+    const canvas = document.getElementById('bg-animation');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // 丸の設定
+    const circles = [
+        { x: 200, baseY: 300, r: 60, color: 'rgba(80,227,194,0.07)', speed: 0.3, lineColor: 'rgba(80,227,194,0.15)', dotColor: 'rgba(80,227,194,0.25)', speedFactor: 0.004 },
+        { x: 600, baseY: 500, r: 100, color: 'rgba(74,144,226,0.05)', speed: 0.18, lineColor: 'rgba(74,144,226,0.13)', dotColor: 'rgba(74,144,226,0.22)', speedFactor: 0.006 },
+        { x: window.innerWidth - 250, baseY: 200, r: 80, color: 'rgba(255,180,80,0.04)', speed: 0.22, lineColor: 'rgba(255,180,80,0.13)', dotColor: 'rgba(255,180,80,0.22)', speedFactor: 0.008 },
+        { x: window.innerWidth - 100, baseY: window.innerHeight - 150, r: 50, color: 'rgba(255,80,180,0.05)', speed: 0.25, lineColor: 'rgba(255,80,180,0.13)', dotColor: 'rgba(255,80,180,0.22)', speedFactor: 0.010 }
+    ];
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const scrollY = window.scrollY;
+        circles.forEach((c, i) => {
+            // スクロール量で上下にゆっくり動く
+            let y = c.baseY + Math.sin((scrollY + i * 100) * c.speed * 0.01) * 40;
+            ctx.beginPath();
+            ctx.arc(c.x, y, c.r, 0, Math.PI * 2);
+            ctx.fillStyle = c.color;
+            ctx.fill();
+
+            // --- 円周上の線 ---
+            // 線の太さをスクロール量で変化（2px〜8px）
+            const minW = 2, maxW = 8;
+            // 各円ごとにspeedFactorで変化量を調整
+            const dynamicWidth = minW + (maxW - minW) * (0.5 + 0.5 * Math.sin(scrollY * c.speedFactor + i));
+            const smallR = c.r + 10;
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(c.x, y, smallR, 0, Math.PI * 2);
+            ctx.strokeStyle = c.lineColor;
+            ctx.lineWidth = dynamicWidth;
+            ctx.shadowColor = c.lineColor;
+            ctx.shadowBlur = 8;
+            ctx.stroke();
+            ctx.restore();
+
+            // --- 円周上をなぞる小円 ---
+            // 各円ごとにspeedFactorで動きを調整
+            const angle = (scrollY * c.speedFactor + i) % (Math.PI * 2);
+            const dotX = c.x + smallR * Math.cos(angle);
+            const dotY = y + smallR * Math.sin(angle);
+            ctx.beginPath();
+            ctx.arc(dotX, dotY, 10, 0, Math.PI * 2);
+            ctx.fillStyle = c.dotColor;
+            ctx.shadowColor = c.dotColor;
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        });
+    }
+
+    // スクロール・リサイズ・アニメーションフレームで描画
+    window.addEventListener('scroll', draw);
+    window.addEventListener('resize', () => {
+        // 右端の丸の位置を再計算
+        circles[2].x = window.innerWidth - 250;
+        circles[3].x = window.innerWidth - 100;
+        circles[3].baseY = window.innerHeight - 150;
+        draw();
+    });
+    function loop() {
+        draw();
+        requestAnimationFrame(loop);
+    }
+    loop();
+}
+
 // トップ初期化
 const initBackToTopButton = () => {
     const backToTopBtn = document.createElement('button');
@@ -236,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initWorkItemHover();
     initEmailCopy();
     initBackToTopButton();
+    initBgAnimation(); // ← 追加
 
     // ページロード
     window.addEventListener('load', () => {
