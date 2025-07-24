@@ -327,6 +327,10 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    /* 高さ揃え用 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .work-item:hover {
@@ -359,6 +363,10 @@ body {
 
 .work-content {
     padding: 1.5rem;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .work-tags {
