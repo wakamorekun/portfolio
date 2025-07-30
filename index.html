@@ -287,6 +287,60 @@
                             </div>
                         </div>
                     </div>
+                    <!-- 追加1 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="work-item">
+                            <div class="work-image">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#videoModalA">
+                                    <img src="project4.png" alt="動画プロジェクトA" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="work-content">
+                                <h3>ランダムアート生成アプリ</h3>
+                                <p>Pythonを使用して作成したランダムアート生成アプリです</p>
+                                <p>ランダムでアートを生成します</p>
+                                <div class="work-tags">
+                                    <span class="badge bg-secondary">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加2 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="work-item">
+                            <div class="work-image">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#videoModalB">
+                                    <img src="project5.png" alt="動画プロジェクトB" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="work-content">
+                                <h3>ホテル予約システム</h3>
+                                <p>Javaを使用して作成したホテル予約システムです</p>
+                                <p>ホテルの予約を管理できます</p>
+                                <div class="work-tags">
+                                    <span class="badge bg-secondary">Java</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加3 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="work-item">
+                            <div class="work-image">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#videoModalC">
+                                    <img src="project6.png" alt="動画プロジェクトC" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="work-content">
+                                <h3>タイピングゲーム</h3>
+                                <p>Javaを使用して作成したタイピングゲームです</p>
+                                <p>タイピングゲームをプレイできます</p>
+                                <div class="work-tags">
+                                    <span class="badge bg-secondary">Java</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -346,6 +400,33 @@
                 project3Video.currentTime = 0;
             });
         }
+        // 動画プロジェクトA
+        var videoModalA = document.getElementById('videoModalA');
+        var project4Video = document.getElementById('project4Video');
+        if (videoModalA && project4Video) {
+            videoModalA.addEventListener('hidden.bs.modal', function () {
+                project4Video.pause();
+                project4Video.currentTime = 0;
+            });
+        }
+        // 動画プロジェクトB
+        var videoModalB = document.getElementById('videoModalB');
+        var project5Video = document.getElementById('project5Video');
+        if (videoModalB && project5Video) {
+            videoModalB.addEventListener('hidden.bs.modal', function () {
+                project5Video.pause();
+                project5Video.currentTime = 0;
+            });
+        }
+        // 動画プロジェクトC
+        var videoModalC = document.getElementById('videoModalC');
+        var project6Video = document.getElementById('project6Video');
+        if (videoModalC && project6Video) {
+            videoModalC.addEventListener('hidden.bs.modal', function () {
+                project6Video.pause();
+                project6Video.currentTime = 0;
+            });
+        }
     </script>
 
     <!-- 動画モーダル -->
@@ -359,6 +440,57 @@
                 <div class="modal-body">
                     <video id="project3Video" width="100%" controls>
                         <source src="project3.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグに対応していません。
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 動画モーダルA -->
+    <div class="modal fade" id="videoModalA" tabindex="-1" aria-labelledby="videoModalLabelA" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabelA">動画プロジェクトA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="project4Video" width="100%" controls>
+                        <source src="work4.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグに対応していません。
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 動画モーダルB -->
+    <div class="modal fade" id="videoModalB" tabindex="-1" aria-labelledby="videoModalLabelB" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabelB">動画プロジェクトB</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="project5Video" width="100%" controls>
+                        <source src="work5.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグに対応していません。
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 動画モーダルC -->
+    <div class="modal fade" id="videoModalC" tabindex="-1" aria-labelledby="videoModalLabelC" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabelC">動画プロジェクトC</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="project6Video" width="100%" controls>
+                        <source src="work6.mp4" type="video/mp4">
                         お使いのブラウザは動画タグに対応していません。
                     </video>
                 </div>
